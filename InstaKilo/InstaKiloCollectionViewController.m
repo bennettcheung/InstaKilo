@@ -9,6 +9,7 @@
 #import "InstaKiloCollectionViewController.h"
 #import "Photo.h"
 #import "InstaKiloCollectionViewCell.h"
+#import "InstaKiloHeaderCollectionReusableView.h"
 
 @interface InstaKiloCollectionViewController ()
 @property (nonatomic, strong) NSArray <Photo*> *photoArray;
@@ -110,5 +111,33 @@ static NSString * const reuseIdentifier = @"Cell";
 	
 }
 */
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        InstaKiloHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderCell" forIndexPath:indexPath];
+        
+        headerView.sectionHeaderLabel.text = @"Subject";
+    
+        
+        reusableview = headerView;
+    }
+    return reusableview;
+}
+    
+    
+    // Mark: IBActions
+
+- (IBAction)orderBySegmentedControl:(UISegmentedControl *)sender {
+    
+    //sort by subject
+    if (sender.selectedSegmentIndex == 0){
+        
+    }
+    else{
+        
+    }
+}
 
 @end

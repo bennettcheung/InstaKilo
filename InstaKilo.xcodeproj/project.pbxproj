@@ -17,6 +17,7 @@
 		91830E7E2124B2FE00F4B31A /* InstaKiloCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91830E7D2124B2FE00F4B31A /* InstaKiloCollectionViewController.m */; };
 		91830E812124B35B00F4B31A /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 91830E802124B35B00F4B31A /* Photo.m */; };
 		91830E842124B6BE00F4B31A /* InstaKiloCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91830E832124B6BE00F4B31A /* InstaKiloCollectionViewCell.m */; };
+		91830E872124C3C400F4B31A /* InstaKiloHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91830E862124C3C400F4B31A /* InstaKiloHeaderCollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		91830E802124B35B00F4B31A /* Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		91830E822124B6BE00F4B31A /* InstaKiloCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstaKiloCollectionViewCell.h; sourceTree = "<group>"; };
 		91830E832124B6BE00F4B31A /* InstaKiloCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaKiloCollectionViewCell.m; sourceTree = "<group>"; };
+		91830E852124C3C400F4B31A /* InstaKiloHeaderCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstaKiloHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		91830E862124C3C400F4B31A /* InstaKiloHeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaKiloHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				91830E7F2124B35B00F4B31A /* Photo.h */,
 				91830E802124B35B00F4B31A /* Photo.m */,
 				91830E502124B0C300F4B31A /* Main.storyboard */,
+				91830E852124C3C400F4B31A /* InstaKiloHeaderCollectionReusableView.h */,
+				91830E862124C3C400F4B31A /* InstaKiloHeaderCollectionReusableView.m */,
 				91830E7C2124B2FE00F4B31A /* InstaKiloCollectionViewController.h */,
 				91830E7D2124B2FE00F4B31A /* InstaKiloCollectionViewController.m */,
 				91830E822124B6BE00F4B31A /* InstaKiloCollectionViewCell.h */,
@@ -273,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91830E5A2124B0C400F4B31A /* main.m in Sources */,
+				91830E872124C3C400F4B31A /* InstaKiloHeaderCollectionReusableView.m in Sources */,
 				91830E4C2124B0C300F4B31A /* AppDelegate.m in Sources */,
 				91830E842124B6BE00F4B31A /* InstaKiloCollectionViewCell.m in Sources */,
 				91830E812124B35B00F4B31A /* Photo.m in Sources */,
