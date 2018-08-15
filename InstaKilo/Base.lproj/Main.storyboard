@@ -73,10 +73,11 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-3w-apF">
                                     <rect key="frame" x="128" y="15" width="119" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <color key="backgroundColor" red="0.21855817651360421" green="0.75761286855535204" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="U8w-3w-apF" firstAttribute="centerY" secondItem="mjp-GS-plV" secondAttribute="centerY" id="0gh-1M-dsj"/>
                                 <constraint firstItem="U8w-3w-apF" firstAttribute="centerX" secondItem="mjp-GS-plV" secondAttribute="centerX" id="8Hp-a8-b7H"/>

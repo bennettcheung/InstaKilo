@@ -12,7 +12,7 @@
 #import "InstaKiloHeaderCollectionReusableView.h"
 
 @interface InstaKiloCollectionViewController ()
-@property (nonatomic, strong) NSArray <Photo*> *photoArray;
+@property (nonatomic, strong) NSArray <NSArray*> *photoArray;
 @end
 
 @implementation InstaKiloCollectionViewController
@@ -38,16 +38,24 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)setupPhotoArray{
-    self.photoArray = @[[[Photo alloc]initWithImageName:@"image1" subject:@"River" location:@"Norway"],
-                        [[Photo alloc]initWithImageName:@"image2" subject:@"Lake" location:@"Seattle"],
-                        [[Photo alloc]initWithImageName:@"image3" subject:@"Lake" location:@"Portland"],
-                        [[Photo alloc]initWithImageName:@"image4" subject:@"Meadows" location:@"Banff"],
-                        [[Photo alloc]initWithImageName:@"image5" subject:@"River" location:@"Crotia"],
-                        [[Photo alloc]initWithImageName:@"image6" subject:@"Mountain" location:@"Hawaii"],
-                        [[Photo alloc]initWithImageName:@"image7" subject:@"Mountain" location:@"Peru"],
-                        [[Photo alloc]initWithImageName:@"image8" subject:@"Waterfall" location:@"New Zealand"],
-                        [[Photo alloc]initWithImageName:@"image9" subject:@"Glacier" location:@"Argentina"],
-                        [[Photo alloc]initWithImageName:@"image10" subject:@"Lake" location:@"Whistler"]
+    NSArray *river = @[
+                       [[Photo alloc]initWithImageName:@"image1" subject:@"River" location:@"Norway"],
+                       [[Photo alloc]initWithImageName:@"image5" subject:@"River" location:@"Crotia"]
+                       ];
+    NSArray *lake = @[
+                      [[Photo alloc]initWithImageName:@"image2" subject:@"Lake" location:@"Seattle"],
+                      [[Photo alloc]initWithImageName:@"image3" subject:@"Lake" location:@"Portland"],
+                      [[Photo alloc]initWithImageName:@"image10" subject:@"Lake" location:@"Whistler"]
+                      ];
+    
+    NSArray *mountain = @[
+                          [[Photo alloc]initWithImageName:@"image6" subject:@"Mountain" location:@"Hawaii"],
+                          [[Photo alloc]initWithImageName:@"image7" subject:@"Mountain" location:@"Peru"]
+                          ];
+    self.photoArray = @[ river, lake, mountain,
+                        @[[[Photo alloc]initWithImageName:@"image4" subject:@"Meadows" location:@"Banff"]],
+                        @[[[Photo alloc]initWithImageName:@"image8" subject:@"Waterfall" location:@"New Zealand"]],
+                        @[[[Photo alloc]initWithImageName:@"image9" subject:@"Glacier" location:@"Argentina"]]
                         ];
 }
 
@@ -63,16 +71,19 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDataSource>
 
-
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    
+    return [self.photoArray count];
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.photoArray count];
+    return [self.photoArray[section] count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     InstaKiloCollectionViewCell *cell = (InstaKiloCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"photocell" forIndexPath:indexPath];
     
-    Photo* photo = self.photoArray[indexPath.item];
+    Photo* photo = self.photoArray[indexPath.section][indexPath.item];
     // Configure the cell
     [cell.photoImageView setImage: [UIImage imageNamed:photo.imageName]];
     cell.subjectLabel.text = photo.subject;
@@ -118,7 +129,8 @@ static NSString * const reuseIdentifier = @"Cell";
     if (kind == UICollectionElementKindSectionHeader) {
         InstaKiloHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderCell" forIndexPath:indexPath];
         
-        headerView.sectionHeaderLabel.text = @"Subject";
+        Photo * photo = self.photoArray[indexPath.section][indexPath.item];
+        headerView.sectionHeaderLabel.text = photo.subject;
     
         
         reusableview = headerView;
