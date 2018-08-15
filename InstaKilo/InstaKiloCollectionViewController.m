@@ -12,6 +12,8 @@
 #import "InstaKiloHeaderCollectionReusableView.h"
 
 @interface InstaKiloCollectionViewController ()
+@property (strong, nonatomic) IBOutlet UICollectionView *photoCollectionView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *sortBySegmentedControl;
 @property (nonatomic, strong) NSArray <NSArray*> *photoArray;
 @end
 
@@ -22,7 +24,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setupPhotoArray];
+    [self setupPhotoArrayBySubject];
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -37,7 +39,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
--(void)setupPhotoArray{
+-(void)setupPhotoArrayBySubject{
     NSArray *river = @[
                        [[Photo alloc]initWithImageName:@"image1" subject:@"River" location:@"Norway"],
                        [[Photo alloc]initWithImageName:@"image5" subject:@"River" location:@"Crotia"]
@@ -57,6 +59,21 @@ static NSString * const reuseIdentifier = @"Cell";
                         @[[[Photo alloc]initWithImageName:@"image8" subject:@"Waterfall" location:@"New Zealand"]],
                         @[[[Photo alloc]initWithImageName:@"image9" subject:@"Glacier" location:@"Argentina"]]
                         ];
+}
+
+-(void)setupPhotoArrayByLocation{
+    self.photoArray = @[
+                         @[[[Photo alloc]initWithImageName:@"image4" subject:@"Meadows" location:@"Banff"]],
+                         @[[[Photo alloc]initWithImageName:@"image8" subject:@"Waterfall" location:@"New Zealand"]],
+                         @[[[Photo alloc]initWithImageName:@"image9" subject:@"Glacier" location:@"Argentina"]],
+                         @[[[Photo alloc]initWithImageName:@"image1" subject:@"River" location:@"Norway"]],
+                         @[[[Photo alloc]initWithImageName:@"image5" subject:@"River" location:@"Crotia"]],
+                         @[[[Photo alloc]initWithImageName:@"image2" subject:@"Lake" location:@"Seattle"]],
+                         @[[[Photo alloc]initWithImageName:@"image3" subject:@"Lake" location:@"Portland"]],
+                         @[[[Photo alloc]initWithImageName:@"image10" subject:@"Lake" location:@"Whistler"]],
+                         @[[[Photo alloc]initWithImageName:@"image6" subject:@"Mountain" location:@"Hawaii"]],
+                         @[[[Photo alloc]initWithImageName:@"image7" subject:@"Mountain" location:@"Peru"]]
+                         ];
 }
 
 /*
@@ -130,8 +147,11 @@ static NSString * const reuseIdentifier = @"Cell";
         InstaKiloHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderCell" forIndexPath:indexPath];
         
         Photo * photo = self.photoArray[indexPath.section][indexPath.item];
-        headerView.sectionHeaderLabel.text = photo.subject;
-    
+        
+        if (self.sortBySegmentedControl.selectedSegmentIndex == 0)
+            headerView.sectionHeaderLabel.text = photo.subject;
+        else
+            headerView.sectionHeaderLabel.text = photo.location;
         
         reusableview = headerView;
     }
@@ -145,11 +165,13 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //sort by subject
     if (sender.selectedSegmentIndex == 0){
-        
+        [self setupPhotoArrayBySubject];
     }
+    //sort by location
     else{
-        
+        [self setupPhotoArrayByLocation];
     }
+    [self.photoCollectionView reloadData];
 }
 
 @end
