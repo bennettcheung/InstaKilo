@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,45 +18,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="auX-5P-BiN">
-                            <size key="itemSize" width="193" height="167"/>
+                            <size key="itemSize" width="356" height="400"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eze-IN-oDy" customClass="InstaKiloCollectionViewCell">
-                                <rect key="frame" x="91" y="0.0" width="193" height="167"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photocell" id="eze-IN-oDy" customClass="InstaKiloCollectionViewCell">
+                                <rect key="frame" x="9.5" y="0.0" width="356" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="193" height="167"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="356" height="400"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nnf-zu-X8d">
-                                            <rect key="frame" x="0.0" y="0.0" width="193" height="130"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nnf-zu-X8d">
+                                            <rect key="frame" x="0.0" y="0.0" width="356" height="400"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3G-bv-WmK">
-                                            <rect key="frame" x="8" y="138" width="66" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3G-bv-WmK">
+                                            <rect key="frame" x="4" y="359" width="174" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M82-Ic-jPc">
-                                            <rect key="frame" x="134" y="146" width="59" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M82-Ic-jPc">
+                                            <rect key="frame" x="205" y="359" width="59" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="M82-Ic-jPc" secondAttribute="trailing" id="1Ge-tx-obw"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="s3G-bv-WmK" secondAttribute="bottom" id="Cxw-FZ-uQa"/>
-                                    <constraint firstItem="Nnf-zu-X8d" firstAttribute="leading" secondItem="eze-IN-oDy" secondAttribute="leading" id="Na3-q2-Qg0"/>
-                                    <constraint firstAttribute="trailing" secondItem="Nnf-zu-X8d" secondAttribute="trailing" id="jus-U6-zDE"/>
-                                    <constraint firstItem="s3G-bv-WmK" firstAttribute="leading" secondItem="eze-IN-oDy" secondAttribute="leadingMargin" id="m3D-4a-gOb"/>
-                                    <constraint firstItem="Nnf-zu-X8d" firstAttribute="top" secondItem="eze-IN-oDy" secondAttribute="top" id="sMn-gw-vZc"/>
-                                    <constraint firstAttribute="bottom" secondItem="M82-Ic-jPc" secondAttribute="bottom" id="tnY-f3-5QA"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="locationLabel" destination="s3G-bv-WmK" id="9BA-5F-XpQ"/>
                                     <outlet property="photoImageView" destination="Nnf-zu-X8d" id="MDt-ef-2Rb"/>

@@ -14,5 +14,5 @@
 @property (nonatomic, strong) NSString *location;
 
 
--(instancetype)initWithImageName:(NSString*)name subject:(NSString*)subject location:(NSStrnig*)location;
+-(instancetype)initWithImageName:(NSString*)name subject:(NSString*)subject location:(NSString*)location;
 @end

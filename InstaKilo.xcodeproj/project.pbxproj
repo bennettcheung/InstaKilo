@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		91830E4C2124B0C300F4B31A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91830E4B2124B0C300F4B31A /* AppDelegate.m */; };
-		91830E4F2124B0C300F4B31A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91830E4E2124B0C300F4B31A /* ViewController.m */; };
 		91830E522124B0C300F4B31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91830E502124B0C300F4B31A /* Main.storyboard */; };
 		91830E542124B0C400F4B31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91830E532124B0C400F4B31A /* Assets.xcassets */; };
 		91830E572124B0C400F4B31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91830E552124B0C400F4B31A /* LaunchScreen.storyboard */; };
@@ -41,8 +40,6 @@
 		91830E472124B0C300F4B31A /* InstaKilo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaKilo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91830E4A2124B0C300F4B31A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91830E4B2124B0C300F4B31A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		91830E4D2124B0C300F4B31A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		91830E4E2124B0C300F4B31A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		91830E512124B0C300F4B31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91830E532124B0C400F4B31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91830E562124B0C400F4B31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,8 +111,6 @@
 				91830E4B2124B0C300F4B31A /* AppDelegate.m */,
 				91830E7F2124B35B00F4B31A /* Photo.h */,
 				91830E802124B35B00F4B31A /* Photo.m */,
-				91830E4D2124B0C300F4B31A /* ViewController.h */,
-				91830E4E2124B0C300F4B31A /* ViewController.m */,
 				91830E502124B0C300F4B31A /* Main.storyboard */,
 				91830E7C2124B2FE00F4B31A /* InstaKiloCollectionViewController.h */,
 				91830E7D2124B2FE00F4B31A /* InstaKiloCollectionViewController.m */,
@@ -277,7 +272,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91830E4F2124B0C300F4B31A /* ViewController.m in Sources */,
 				91830E5A2124B0C400F4B31A /* main.m in Sources */,
 				91830E4C2124B0C300F4B31A /* AppDelegate.m in Sources */,
 				91830E842124B6BE00F4B31A /* InstaKiloCollectionViewCell.m in Sources */,
